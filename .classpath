@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="test"/>
+	<classpathentry kind="lib" path="C:/_dev/libraries/spring-web-4.3.8.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/_dev/libraries/spring-core-4.1.0.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/_dev/libraries/slf4j-api-1.7.9.jar"/>
+	<classpathentry kind="lib" path="C:/_dev/libraries/slf4j-simple-1.7.9.jar"/>
+	<classpathentry kind="lib" path="C:/_dev/libraries/commons-lang3-3.9.jar"/>
+	<classpathentry kind="lib" path="C:/_dev/libraries/jackson-annotations-2.10.2.jar"/>
+	<classpathentry kind="lib" path="C:/_dev/libraries/jackson-core-2.10.2.jar"/>
+	<classpathentry kind="lib" path="C:/_dev/libraries/jackson-databind-2.10.2.jar"/>
+	<classpathentry kind="lib" path="C:/_dev/libraries/jackson-utils-1.1.0.jar"/>
+	<classpathentry kind="lib" path="C:/_dev/libraries/spring-webmvc-5.2.3.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/_dev/libraries/commons-logging-1.2.jar"/>
+	<classpathentry kind="lib" path="C:/_dev/libraries/junit-4.13.jar"/>
+	<classpathentry kind="lib" path="C:/_dev/libraries/hamcrest-all-1.3.jar"/>
+	<classpathentry kind="lib" path="C:/_dev/activemq/activemq-all-5.15.11.jar"/>
+	<classpathentry kind="lib" path="C:/_dev/libraries/maven-uberize-plugin-1.45.jar"/>
+	<classpathentry kind="lib" path="C:/_dev/libraries/mqtt-client-1.10.jar"/>
+	<classpathentry kind="lib" path="C:/_dev/libraries/artemis-maven-plugin-2.11.0.jar"/>
+	<classpathentry kind="lib" path="C:/_dev/libraries/antlr-4.8-complete.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
