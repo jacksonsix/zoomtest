@@ -14,18 +14,21 @@ public class FileUtil {
 		delFiles(dir);
 	}
 	
-	public static void listSubFolder(String dir) {
+	public static Set<String> listSubFolder(String dir) {
 		Set<String> nodes = new HashSet<>();
 		Set<String> edges = new HashSet<>();
 		list(dir,nodes,edges);
 		for(String n: nodes) {
-			System.out.println(n);
+			//System.out.println(n);
 		}
 		
 		for(String n: edges) {
 			//System.out.println(n);
 		}
+		return nodes;
 	}
+	
+
 	
 	private static void list(String dir,Set<String> nodes, Set<String> edges) {
 		File folder = new File(dir);
@@ -88,7 +91,7 @@ public class FileUtil {
 		Set<String> edges = new HashSet<>();
 		
 	   Set<String> filenames = new HashSet<>();
-	   String filename ="C:\\_dev\\PythonTest\\todel.txt";
+	   String filename ="C:\\_dev\\PythonTest\\todel2.txt";
 		try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
 		    String line;
 		    int state = 0;

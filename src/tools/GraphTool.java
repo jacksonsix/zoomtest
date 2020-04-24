@@ -32,7 +32,19 @@ public class GraphTool {
 		
 		//test3();
 		
-		test4();
+		//test4();
+		test5();
+	}
+	
+	private static void test5() {
+		//
+		Graph a = readFromFile("C:\\Users\\jliang\\DEV_LAB\\ordering_eclipse\\zoomytest\\src\\fsm\\functiongraph.txt");
+		a.setup();
+		INode n = a.getNodeByName("StockEvent"); 
+	    Set<Object> grey = new HashSet<>();
+	    grey.add(n);
+	    DFS(a,n,grey);
+		
 	}
 	
 	private static void test4()  {
@@ -218,8 +230,8 @@ public class GraphTool {
 	
 	public static void DFS(Graph main, INode n,Set<Object> black) {
 		Set<IPath> ups = n.getUp();
-		//Set<IPath> downs = n.getDown();
-		//ups.addAll(downs);
+		Set<IPath> downs = n.getDown();
+		ups.addAll(downs);
 		for(IPath ch: ups) {
 			if(black.contains(ch)) {
 				continue;
@@ -313,7 +325,7 @@ public class GraphTool {
 		    while ((line = br.readLine()) != null) {
 		      if(state == 0) {
 		    	  
-		    	  if(line.equalsIgnoreCase("Path")) {
+		    	  if(line.trim().equalsIgnoreCase("Path")) {
 		    		  state = 1;
 		    		  continue;
 		    	  }else {
@@ -323,7 +335,7 @@ public class GraphTool {
 		    	  
 		      }else {
 		    	  if(line.isEmpty()) continue;
-		    	  String[] segs = line.split(",");
+		    	  String[] segs = line.split("\\|");
 		    	  String name = segs[0];
 		    	  String from = segs[1];
 		    	  String to = segs[2];

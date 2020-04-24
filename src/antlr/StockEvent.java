@@ -49,6 +49,8 @@ public class StockEvent extends CommonProjectEvent {
 
 	@Override
 	public IEventType getEventType() {
+		int a = 6;
+		
 		return eventType;
 	}
 

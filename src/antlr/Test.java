@@ -24,8 +24,61 @@ public class Test {
    public static void main(String[] args) throws IOException {
 	   
 		//test1();
-	   test2();
+	   //test2();
+	   //test3();
+	   test4();
 	   
+   }
+   
+   private static void test4() throws IOException {
+	   String baseFolder ="C:/Users/jliang/DEV_LAB/Ordering3/github/project-domain-service/src";
+	   String outputfile="C:/_dev/PythonTest/sql.txt";
+	   
+	   //ScanProject p = new ScanProject();
+	   //p.setBaseFolder(baseFolder);
+	   //p.setOutputfile(outputfile);
+	   
+	   //p.scan();
+	   
+	   ScanClass pc = new ScanClass();
+	   pc.setBaseFolder(baseFolder);
+	   pc.setOutputfilename(outputfile);
+	   pc.scan();
+   }
+   
+   private static void test3() throws IOException {
+	   CharStream is = (CharStream) CharStreams.fromFileName("C:\\Users\\jliang\\DEV_LAB\\ordering_eclipse\\zoomytest\\src\\antlr\\StockEvent.java");
+	   // parse
+        Java8Lexer lexer = new Java8Lexer(is);
+		CommonTokenStream tokens = new CommonTokenStream(lexer);
+		Java8Parser parser = new Java8Parser(tokens);
+		ParseTree tree = parser.compilationUnit();
+		
+		//System.out.println(tree.toStringTree(parser));
+		
+		FunctionAndMembers up = new FunctionAndMembers();
+		ParseTreeWalker walker = new ParseTreeWalker();
+		walker.walk(up,tree);
+		
+        Set<String> imp = up.getImports();
+        for(String i: imp) {
+        	//System.out.println(i);
+        }
+        Set<String> funs = up.getFunctions();
+        for(String i: funs) {
+        	//System.out.println(i);
+        }
+        
+        Set<String> nodes = up.getNodes();
+        for(String i: nodes) {
+        	//System.out.println(i);
+        }
+        //System.out.println("Path");
+        Set<String> edges = up.getEdges();
+        for(String i: edges) {
+        	//System.out.println(i);
+        }
+		
    }
    
    private static void test1() throws IOException {
@@ -80,7 +133,7 @@ public class Test {
 			Java8Parser parser = new Java8Parser(tokens);
 			ParseTree tree = parser.compilationUnit();
 						
-			RefPath up = new RefPath();
+			PackageAndRefs up = new PackageAndRefs();
 			ParseTreeWalker walker = new ParseTreeWalker();
 			walker.walk(up,tree);
 			

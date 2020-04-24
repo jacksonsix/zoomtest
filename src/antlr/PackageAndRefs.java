@@ -14,12 +14,12 @@ import java.util.stream.Collectors;
  * */
 
 
-public class RefPath extends Java8BaseListener{
+public class PackageAndRefs extends Java8BaseListener{
 	Set<String> alltypes;
 	Set<String> imports;
 	String packagename;
 	String classname;
-	public RefPath() {
+	public PackageAndRefs() {
 		alltypes = new HashSet<>(); 
 		imports = new HashSet<>();
 	}
@@ -30,11 +30,7 @@ public class RefPath extends Java8BaseListener{
 		return this.alltypes;
 	}
 	
-	@Override public void enterUnannType(Java8Parser.UnannTypeContext ctx) { 
-		//String type = ctx.unannReferenceType().getText();
-		//alltypes.add(type);
-		
-	}
+
 	@Override public void enterPackageDeclaration(Java8Parser.PackageDeclarationContext ctx) { 
 		
 		packagename=ctx.Identifier().stream().map(t -> t.getText()).collect(Collectors.joining("."));
